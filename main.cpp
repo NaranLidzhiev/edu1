@@ -1,13 +1,15 @@
 #include <iostream>
 using namespace std;
-#include <stdlib.h>
-#include <string.h>
-const int MAX = 11;
+const int MAX = 256;
 int main() {
-    int source[MAX] = {1,2,3,4,5,6,7,8,23,4,234};
-    int target[MAX];
-    memcpy(target, source, sizeof(source));
-    for (int i =0; i< MAX; i++){
-        cout << target[i] << endl;
+    char input[MAX];
+    int  i =0;
+    long value = 0;
+    cin.getline(input, MAX);
+    while(input[i]>='0' && input[i]<='9'){
+        value*= 10;
+        value += input[i] -'0';
+        i++;
     }
+    cout << value << endl;
 }
